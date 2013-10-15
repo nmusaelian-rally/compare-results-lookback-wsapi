@@ -14,14 +14,12 @@ Ext.define('CustomApp', {
                                 this._iterationOid = combobox.getRecord().get('ObjectID'); 
                                 this._loadStories(this._iterationRef,this._iterationOid);
    			},
-   			scope: this  //IMPORTANT
+   			scope: this  
    		}
    	});
         this.add(iterationComboBox);
-        //...............
         var that = this;
          var container = Ext.create('Ext.Container', {
-            //html: 'Select a store',
             items: [
                 {
                            xtype: 'text',
@@ -48,39 +46,11 @@ Ext.define('CustomApp', {
                 ]
          });
          this.add(container);
-        //.................
     },
     
      _loadStories: function(iterationRef,iterationOid){
         console.log('select a store');
      },
-    /*
-    _loadStories: function(iterationRef,iterationOid){
-   	 var that = this;
-         var container = Ext.create('Ext.Container', {
-            items: [
-                {
-                            xtype  : 'rallybutton',
-                            text      : 'use snapshot store',
-                            id: 'b1',
-                            margin: '10',
-                            handler: function() {
-                                    that._loadStoriesWithSnapshot(iterationOid);
-                            }
-                        },
-                        
-                        {
-                            xtype  : 'rallybutton',
-                            text      : 'use wsapi data store',
-                            id: 'b2',
-                            handler: function() {
-                                     this._loadStoriesWithWsapiDataStore(iterationRef);
-                            }
-                        }
-                ]
-         });
-         this.add(container);
-   },*/
    
   
      _loadStoriesWithSnapshot:function(iterationOid){
